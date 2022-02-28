@@ -1,0 +1,46 @@
+img{
+    width: 50%;
+}
+
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+td, th {
+    border: 1px solid #ddd;
+    padding: 18px;
+    color: #000000;
+  }
+  
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+tr:nth-child(odd){
+    background-color: #ffffff;
+}
+  
+tr:hover {
+    background-color: #ddd;
+}
+  
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+}
+
+table:hover{
+    animation: rotate 5s infinite;
+}
+
+@keyframes rotate {
+    100% {transform: rotate(360deg);}    
+}
+
+.black{
+    background-color: black;
+}

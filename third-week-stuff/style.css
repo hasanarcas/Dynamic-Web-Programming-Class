@@ -1,0 +1,75 @@
+body{
+    background-color: bisque;
+}
+
+.divs{
+    display: table;
+}
+
+.first-group{
+    padding: 20px;
+}
+
+.div1{
+    background: red;
+    padding: 20px;
+}
+
+.div2{
+    background: yellow;
+    padding: 20px;
+}
+
+.div3{
+    background: green;
+    padding: 20px;
+}
+
+.text{
+    margin: auto;
+    width: 50%;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    color: red;
+    margin-top: 20px;
+}
+
+p {
+    color: black;
+    font-size: large;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 20px; 
+    border: 10px solid green;
+    background-color: rgb(187, 187, 187);
+}
+
+ul{
+    list-style-type: none;
+    background-color: rgb(190, 138, 238);
+    margin-left: 20px;
+    padding: 20px;
+    display: inline;
+}
+
+li{
+    display: inline;
+}
+
+li a{
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+li a:hover{
+    background-color: black;
+}
+
+.list{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
