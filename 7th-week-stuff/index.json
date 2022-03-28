@@ -1,0 +1,5 @@
+{"students":[
+    { "firstName":"John", "lastName":"Doe", "score": 23 },
+    { "firstName":"Anna", "lastName":"Smith", "score": 56 },
+    { "firstName":"Peter", "lastName":"Jones", "score": 89 }
+  ]}
