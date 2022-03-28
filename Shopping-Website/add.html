@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style-add.css">
+    <!-- bind myscript.js here  -->
+    <script src="myscript.js"></script>
+    <title>Add New Bonsai</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="add.html">Add Bonsai</a></li>
+        </ul>
+    </nav>
+
+    <h1>Please Submit The Form In Order To Add A New Bonsai</h1>
+    <div class="form-container">
+        <div class="form-title">Add New Item</div>
+        <div class="inputs">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required>
+            <br>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" required>
+            <br>
+            <label for="image">Image:</label>
+            <input type="text" name="image" id="image" required>
+            <br>
+            <button type="button" onclick="submitForm()">Add Item</button>
+        </div>  
+    </div>
+</body>
+</html>

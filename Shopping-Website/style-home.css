@@ -1,0 +1,107 @@
+/* center the entire page */
+body {
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+}
+
+/* make some style for ul */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* make some style for li */
+li {
+  float: left;
+}
+
+/* make some style for a */
+a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* center the h1 and make it red and bold*/
+h1 {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+/* center everything inside card */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid rgb(64, 120, 241);
+}
+
+/* put all the content of card-row in 1 row */
+.card-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* center card-description content */
+.card-description {
+  text-align: center;
+}
+
+/* add some style for card */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(7, 105, 233, 0.2);
+  max-width: 250px;
+  margin: 10px;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* add style for desc class p */
+.desc {
+  padding: 12px;
+  text-decoration: none;
+  color: rgb(86, 171, 204);
+  display: block;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+/* class shopping flex right */
+.shopping {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* add style for footer */
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+button {
+  color: white;
+  margin-top: 20px;
+  background: #1DA1F2;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: none;
+}
