@@ -5,92 +5,47 @@
     <link rel="stylesheet" type="text/css" href="style-home.css">
     <script src="myscript.js"></script>
     <title>Hasan's Website</title>
+    <script type="text/javascript">
+        window.onload = displayProducts;
+    </script>
 </head>
 <body>
     <!-- Create a navbar-->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="add.html">Add Bonsai</a></li>
+            <li onclick="home()">Home</li>
+            <li onclick="addPage()">Add Bonsai</li>
         </ul>
     </nav>
-    <a class="shopping" href="basket.html"><img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/shopping_cart.png" alt="basket" width="50" height="50"></a>
-    <h1>Welcome to Hasan's Bonsai Store</h1>
-    <!-- create 3 cards in the same row -->
-    <div id="items-container">
-        <div class="card-row">
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://www.hediyesepeti.com/blog/wp-content/uploads/2020/10/bonsai-bakimi.jpg" alt="bonsai1" width="250px" height="150px">
-                </div>
-                <div class="card-description">
-                    <h3>Bonsai 1</h3>
-                    <p class="desc">A really good Bonsai</p>
-                    <p>Price: $10.00</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://imgrosetta.mynet.com.tr/file/36820/728xauto.jpg" alt="bonsai1" width="250px" height="150px">
-                </div>
-                <div class="card-description">
-                    <h3>Bonsai 2</h3>
-                    <p class="desc">This mini-tree will decorate your house</p>
-                    <p>Price: $20.00</p>
-                    <button onclick="addToCart(2)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://media.istockphoto.com/photos/bonsai-japanese-red-maple-picture-id482617609" alt="bonsai1" width="250px" height="150px">
-                </div>
-                <div class="card-description">
-                    <h3>Bonsai 3</h3>
-                    <p class="desc">This plant will add some color to your place</p>
-                    <p>Price: $30.00</p>
-                    <button onclick="addToCart(3)">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-row">
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://mymodernmet.com/wp/wp-content/uploads/2021/02/bonsai-tree-history-thumb-large.jpg" alt="bonsai1" width="250px" height="150px">
-                </div>
-                <div class="card-description">
-                    <h3>Bonsai 1</h3>
-                    <p class="desc">Taken from a secret monastery in Japan</p>
-                    <p>Price: $10.00</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9MttmjBEez8wYHe3_z-OotnrSNQQMFdhVGk6TwWbDCaz_Z-gI9f-62cG-UmbQMb2kaTU&usqp=CAU" alt="bonsai1" width="250px" height="150px">
-                </div>
-                <div class="card-description">
-                    <h3>Bonsai 2</h3>
-                    <!-- add a p for describing a bonsai -->
-                    <p class="desc">From Japan with love</p>
-                    <p>Price: $20.00</p>
-                    <button onclick="addToCart(2)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://previews.123rf.com/images/johnharrisonphotography/johnharrisonphotography1807/johnharrisonphotography180700094/105756821-beautiful-vibrant-green-juniper-bonsai-tree-with-shibari.jpg" alt="bonsai1" width="250px" height="150px">
-                </div>
-                <div class="card-description">
-                    <h3>Bonsai 3</h3>
-                    <p class="desc">A wonderful gift for a family member</p>
-                    <p >Price: $30.00</p>
-                    <button onclick="addToCart(3)">Add to Cart</button>
-                </div>
-            </div>
+    <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/shopping_cart.png" alt="basket" width="50" height="50" style="float: right;" onclick="cartPage()">
+    <div id="items-container"></div>
+
+    <div id="addBonsai" style="display: none;">
+        <h1>Please Submit The Form In Order To Add A New Bonsai</h1>
+        <div class="form-container">
+            <div class="form-title">Add New Item</div>
+            <div class="inputs">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+                <br>
+                <label for="description">Description:</label>
+                <input type="text" name="description" id="description" required>
+                <br>
+                <label for="price">Price:</label>
+                <input type="number" name="price" id="price" required>
+                <br>
+                <label for="image">Image:</label>
+                <input type="text" name="image" id="image" required>
+                <br>
+                <button type="button" onclick="submitForm()">Add Item</button>
+            </div>  
         </div>
     </div>
+
+    <div id="cartPage" style="display: none;">
+    </div>
+    
+    
 
     <!-- add a footer -->
     <footer>
