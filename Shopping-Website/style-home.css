@@ -1,4 +1,11 @@
-/* center the entire page */
+html { 
+  background: url("https://images2.alphacoders.com/113/1130693.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
     margin: auto;
     width: 75%;
@@ -17,6 +24,8 @@ ul {
 /* make some style for li */
 li {
   float: left;
+  border-radius: 1000px;
+  background-color: #1DA1F2;
 }
 
 /* make some style for a */
@@ -36,24 +45,48 @@ li:hover , img:hover{
 /* center the h1 and make it red and bold*/
 h1 {
   text-align: center;
-  color: red;
+  color: #333;
+  font-size: 40px;
   font-weight: bold;
+}
+
+h3{
+  text-align: center;
+  color: rgb(43, 0, 0);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+p{
+  text-align: center;
+  color: rgb(199, 0, 0);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  ;
 }
 
 /* center everything inside card */
 .card {
-  background-color: white;
+  /* background-color: rgb(252, 252, 252); */
+  background: rgba(160, 241, 252, 0.3);
   padding: 20px;
   margin: 20px;
   border: 1px solid rgb(64, 120, 241);
 }
 
 /* put all the content of card-row in 1 row */
-.card-row {
+.card-row , .card-row-cart{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.card-row-cart{
+  justify-content: flex-start;
+  max-width: 100%;
 }
 
 /* center card-description content */
@@ -63,21 +96,23 @@ h1 {
 
 /* add some style for card */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(7, 105, 233, 0.2);
   max-width: 250px;
   margin: 10px;
   text-align: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 15px;
 }
 
 /* add style for desc class p */
 .desc {
   padding: 12px;
   text-decoration: none;
-  color: rgb(86, 171, 204);
+  color: rgb(0, 0, 0);
   display: block;
+  font-size: 25px;
   font-family: cursive;
   font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* class shopping flex right */
@@ -104,7 +139,6 @@ button {
   border-radius: 20px;
   cursor: pointer;
   font-weight: 900;
-  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
   transition: 0.5s;
 }
 
@@ -119,8 +153,7 @@ button:hover {
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
-  background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  background: rgba(160, 241, 252, 0.3);
   margin-left: auto;
   margin-right: auto;
 }
@@ -129,7 +162,7 @@ button:hover {
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: #1DA1F2;
+  color: rgb(43, 0, 0);
   letter-spacing: 1px;
 }
 
@@ -149,6 +182,8 @@ label, input, button {
 
 label {
   margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 label:nth-of-type(2) {
@@ -167,4 +202,66 @@ input {
   font-size: 14px;
   border-radius: 50px;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+h2.thanks{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1DA1F2;
+  margin-top: 20px;
+}
+
+h2.priceText{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1DA1F2;
+  margin-top: 20px;
+}
+
+#counter{
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+#cart-container{
+  /* add border */
+  border: 3px solid rgb(64, 120, 241);
+  border-radius: 15px;
+  padding: 20px;
+
+}
+
+.card-cart{
+  /* display image at left and description at right */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  margin-top: 20px;
+  padding: 20px;
+  background-color:#f5fcd6;
+}
+
+.card-cart img{
+  /* stick to left */
+  float: left;
+
+  margin-top: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
+.method{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+  color: #011f31;
+  margin-top: 20px;
 }
