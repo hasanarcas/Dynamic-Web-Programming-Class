@@ -61,7 +61,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to the Admin Page <span style="color: red;"><?php echo $_SESSION['admin']?></span></h1>
+    <h1 class="text-danger">Welcome to the Admin Page <span style="color: blue;"><?php echo $_SESSION['admin']?></span></h1>
     <div id="navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="form-group">
                     <label>Minimum Price:</label>
-                    <input name="pPrice" type="text" class="form-control" id="pPrice" placeholder="Price">
+                    <input name="pPrice" type="text" class="form-control" id="pPrice" placeholder="Minimum Price">
                 </div>
                 <input class="btn btn-success" type="submit" name="btnSearch" value="Search">
             </form>
@@ -112,8 +112,24 @@
                 $pCategory = $_POST['pCategory'];
                 $pName = $_POST['pName'];
                 $pPrice = $_POST['pPrice'];
-                $searchQuery = "SELECT pCategory, pName, pPrice FROM products WHERE pCategory = '$pCategory' or pName = '$pName' or pPrice >= '$pPrice'";
-                $result = $connect->query($searchQuery);
+                if($pCategory != "" && $pName != "" && $pPrice != ""){
+                    $sql = "SELECT * FROM products WHERE pCategory = '$pCategory' AND pName = '$pName' AND pPrice >= '$pPrice'";
+                }else if($pCategory != "" && $pName != ""){
+                    $sql = "SELECT * FROM products WHERE pCategory = '$pCategory' AND pName = '$pName'";
+                }else if($pCategory != "" && $pPrice != ""){
+                    $sql = "SELECT * FROM products WHERE pCategory = '$pCategory' AND pPrice >= '$pPrice'";
+                }else if($pName != "" && $pPrice != ""){
+                    $sql = "SELECT * FROM products WHERE pName = '$pName' AND pPrice >= '$pPrice'";
+                }else if($pCategory != ""){
+                    $sql = "SELECT * FROM products WHERE pCategory = '$pCategory'";
+                }else if($pName != ""){
+                    $sql = "SELECT * FROM products WHERE pName = '$pName'";
+                }else if($pPrice != ""){
+                    $sql = "SELECT * FROM products WHERE pPrice >= '$pPrice'";
+                }else{
+                    $sql = "SELECT * FROM products";
+                }
+                $result = $connect->query($sql);
                 $allSearchData = array();
                 while($row=$result->fetch()){
                     array_push($allSearchData,$row);

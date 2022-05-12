@@ -68,7 +68,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Add Admin</title>
     <link rel="stylesheet" href="../style/adminPanel.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script> 
@@ -76,7 +76,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Create an Admin</h1>
+    <h1 class="text-danger">Create an Admin</h1>
     <div id="navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse">

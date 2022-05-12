@@ -70,14 +70,18 @@
         </section>
     </div>
     <footer>
-        <div class="sepet" id="myBasket">
+        <div class="basket" id="myBasket">
             <h3 style="text-align: center; color: red; font-weight:bolder;">Your Cart</h3>
+        </div>
+        <div>
+            <h3 id="totalCost"></h3>
         </div>
 
         <div id="buyDiv" class="payButtons">
             <p id="totalCost" style="color: aliceblue; margin-right: 20px;"></p>
             <button id="buy"style="margin-right: 20px;" onclick="document.getElementById('paymentType').style.visibility='visible'">Purchase Items</button> 
             <button id="continue" style="margin-right: 20px;" ><a href="#allProducts">Continue Shopping</a></button>
+            <p id="total"></p>
         </div>
 
         <div id="paymentType" class="payment">
@@ -94,7 +98,8 @@
             for(var k = 0; k < theLength; k++){
                 document.getElementById('myBasket').lastChild.remove();
                 totalPrice.pop();                
-            }">Finish Purchase
+            }
+            resetTotalPrice();">Finish Purchase
             </button>
         </div>
         <div id="odemeBasariliAlert" class="alert">

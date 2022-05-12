@@ -1,4 +1,5 @@
 var totalPrice = new Array();
+var total = 0;
 
 class product{
     constructor(category, name, price, description, image){
@@ -85,10 +86,6 @@ function placedBest(item){
         liDescription.appendChild(nodeDescription);
         ulOfFeature.appendChild(liDescription);
         
-        var liBasketButton = document.createElement('button');
-        var nodeOfBasket = document.createTextNode('examine');
-        liBasketButton.appendChild(nodeOfBasket);
-        liPrice.appendChild(liBasketButton);
 }
 
 function placedProduct(item, indexOfItem){
@@ -133,15 +130,21 @@ function placedProduct(item, indexOfItem){
 
     var liBasketButton = document.createElement('button');
     liBasketButton.setAttribute('id',indexOfItem);
-    liBasketButton.setAttribute('onclick','var idIndividual = parseInt(this.id);var productForBasket = productList[idIndividual];'+ 
-    ' addToBasket(productForBasket, idIndividual); totalPrice.push(productForBasket.getPrice());' + 
-    'var total = 0; for(var j = 0; j<totalPrice.length; j++)' +
-    '{ total += totalPrice[j];}; document.getElementById("totalCost").innerHTML = total + " ₺";');
+    liBasketButton.setAttribute('onclick',`
+    var idIndividual = parseInt(this.id);
+    var productForBasket = productList[idIndividual]; 
+    addToBasket(productForBasket, idIndividual); 
+    totalPrice.push(productForBasket.getPrice());
+    var total = 0; 
+    for(var j = 0; j<totalPrice.length; j++){ 
+        total += parseInt(totalPrice[j]);
+    }; 
+    document.getElementById("totalCost").innerHTML = "Total Price : " + total + " ₺";`);
     var nodeOfBasket = document.createTextNode('Add to basket');
-    var linkToSepet = document.createElement('a');
-    linkToSepet.setAttribute('href','#myBasket');
-    linkToSepet.appendChild(nodeOfBasket);
-    liBasketButton.appendChild(linkToSepet);
+    var linkToBasket = document.createElement('a');
+    linkToBasket.setAttribute('href','#myBasket');
+    linkToBasket.appendChild(nodeOfBasket);
+    liBasketButton.appendChild(linkToBasket);
 
     liPrice.appendChild(liBasketButton);
 }
@@ -207,6 +210,11 @@ function listProducts(elementToBasket, indexOfBasket){
     liPriceBasket.appendChild(nodePriceBasket);
     ulInfoBasket.appendChild(liPriceBasket);
 
+    var liCategoryBasket = document.createElement('li');
+    var nodeCategoryBasket = document.createTextNode(elementToBasket.getCategory());
+    liCategoryBasket.appendChild(nodeCategoryBasket);
+    ulInfoBasket.appendChild(liCategoryBasket);
+
     var buttonDeleteBasket = document.createElement('button');
     buttonDeleteBasket.setAttribute('class','deleteFromBasket');
     buttonDeleteBasket.setAttribute('onclick','document.getElementById("parentBasket'+indexOfBasket+
@@ -216,4 +224,9 @@ function listProducts(elementToBasket, indexOfBasket){
     divProductBasket.appendChild(buttonDeleteBasket);
 
     document.getElementById('buyDiv').style.visibility = 'visible';
+}
+
+function resetTotalPrice(){
+    document.getElementById("totalCost").innerHTML = "";
+    totalPrice = [];
 }

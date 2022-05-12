@@ -215,7 +215,7 @@ footer{
 }
 
 /*Shopping Cart*/
-.sepet{
+.basket{
     display: flex;
     flex-direction: column;
     background-color: #a8c3dde5;
@@ -274,7 +274,7 @@ footer{
 }
 
 
-/* yeni ürün ekleme*/
+/* Add new Product*/
 
 
 .newProduct{
@@ -307,5 +307,19 @@ h1{
     color: #fa0808;
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
+}
+
+h3#totalCost{
+    margin: auto;
+    width: 350px;
+    animation: offer 1.0s ease-in-out infinite;
+    padding: 10px;
+    border: #000000 solid 10px;
+    border-radius: 15px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #058d00;
     text-align: center;
 }
