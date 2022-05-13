@@ -29,7 +29,7 @@ class product{
 
 function emptyErrorControl(element){
     try{
-        if(element == "") throw "Lütfen tüm değerleri giriniz! ";
+        if(element == "") throw "Please enter all the values! ";
     }catch(error){
         alert(error)
     }
@@ -37,8 +37,8 @@ function emptyErrorControl(element){
 
 function numberErrorControl(){
     try{
-        if(element == "") throw "Lütfen tüm değerleri giriniz! ";
-        if(isNaN(element)) throw "Girilen değer sayı değil! ";
+        if(element == "") throw " Please enter all the values! ";
+        if(isNaN(element)) throw  " Please enter a number ";
         return true;
     }catch(error){
         alert(error);
